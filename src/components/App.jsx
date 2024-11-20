@@ -26,6 +26,11 @@ const App = () => {
       });
   }, []);
 
+  const formatNumber = (num) => {
+    if (!num) return 'N/A';
+    return num.toLocaleString();
+  };
+
   const filteredCountries = countries
     .filter((c) => {
       if (continent) return c.continent === continent;
@@ -39,7 +44,6 @@ const App = () => {
   return (
     <div className="container">
       <h1>Countries</h1>
-
       <select onChange={(e) => { setContinent(e.target.value); setSubregion(''); }} value={continent}>
         <option value="">Select Continent</option>
         <option value="Africa">Africa</option>
@@ -47,7 +51,6 @@ const App = () => {
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
       </select>
-
       <select onChange={(e) => { setSubregion(e.target.value); setContinent(''); }} value={subregion}>
         <option value="">Select Subregion</option>
         <option value="Eastern Africa">Eastern Africa</option>
@@ -55,7 +58,6 @@ const App = () => {
         <option value="Southern Europe">Southern Europe</option>
         <option value="South-Eastern Asia">South-Eastern Asia</option>
       </select>
-
       <div>
         <input 
           type="checkbox" 
@@ -65,7 +67,6 @@ const App = () => {
         />
         <label htmlFor="sortAlphabetically">Sort Alphabetically</label>
       </div>
-
       <div>
         <input 
           type="checkbox" 
@@ -75,15 +76,13 @@ const App = () => {
         />
         <label htmlFor="topTen">Top 10 by {topCriteria}</label>
       </div>
-
       {topTen && (
         <select onChange={(e) => setTopCriteria(e.target.value)} value={topCriteria}>
           <option value="population">Population</option>
           <option value="area">Area</option>
         </select>
       )}
-
-      <Countries countries={filteredCountries} />
+      <Countries countries={filteredCountries} formatNumber={formatNumber} />
     </div>
   );
 };
