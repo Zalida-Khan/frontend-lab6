@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f9ff; 
+  margin: 0;
+  padding: 0;
+  color: #000; 
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a73e8; 
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+select {
+  margin: 10px;
+  padding: 10px; 
+  font-size: 1rem;
+  color: #333; 
+  background-color: #ffffff;
+  border: 1px solid #ddd; 
+  border-radius: 4px;
+  outline: none;
+}
+
+select:focus {
+  border-color: #1a73e8;
+}
+
+select option {
+  color: #fff; 
+}
+
+select option[value=""] {
+  color: #999; 
+}
+
+input[type="checkbox"] + label {
+  font-size: 1rem;
+  margin-left: 5px;
+  color: #333; 
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  color: #1a73e8;
+}
+
+.countries {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.country-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.country-card:hover {
+  transform: scale(1.05);
+}
+
+.country-flag {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+  font-size: 1rem;
+  color: #333; /
+}
+
+.details p {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.details span {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .countries {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .country-card {
+    width: 70%;
+  }
+}

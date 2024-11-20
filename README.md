@@ -2,4 +2,5 @@
 
 ## Countries of the World
 
-## Created by Zalida
+## Created by
+- Zalida Khan
